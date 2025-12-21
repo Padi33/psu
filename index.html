@@ -21,45 +21,119 @@ body { background:#121212; color:#fff; font-family:'Inter',sans-serif; min-heigh
 .tab-section { display:none; }
 .tab-section.active { display:block; }
 
-.card { border-radius:16px; box-shadow:0 8px 24px rgba(0,0,0,0.5); background:#1c1c1c; color:#fff; transition:0.3s; }
-.card:hover { transform:translateY(-5px); box-shadow:0 12px 28px rgba(0,0,0,0.7); }
+.card {
+  border-radius:16px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.5);
+  background:#1c1c1c;
+  color:#fff;
+  transition:0.3s;
+}
+.card:hover {
+  transform:translateY(-5px);
+  box-shadow:0 12px 28px rgba(0,0,0,0.7);
+}
 
-.btn-primary { background:#ffc107; color:#000; font-weight:600; border:none; transition:0.3s; }
+.btn-primary {
+  background:#ffc107;
+  color:#000;
+  font-weight:600;
+  border:none;
+  transition:0.3s;
+}
 .btn-primary:hover { opacity:0.85; }
-.btn-warning { background:#00bcd4; color:#fff; font-weight:600; border:none; transition:0.3s; }
+
+.btn-warning {
+  background:#00bcd4;
+  color:#fff;
+  font-weight:600;
+  border:none;
+  transition:0.3s;
+}
 .btn-warning:hover { opacity:0.85; }
 
 .form-label, .form-check-label { color:#eee; font-weight:500; }
 
 /* Select2 */
-.select2-container--default .select2-selection--single { height: 38px; background:#fff; border:1px solid #ccc; }
-.select2-selection__rendered { line-height:36px !important; color:#000; }
+.select2-container--default .select2-selection--single {
+  height:38px;
+  background:#fff;
+  border:1px solid #ccc;
+}
+.select2-selection__rendered {
+  line-height:36px !important;
+  color:#000;
+}
 .select2-selection__arrow { height:36px; }
 .select2-dropdown { background:#fff; color:#000; }
 .select2-results__option { padding:8px 12px; color:#000; }
 .select2-results { max-height:300px; overflow-y:auto; }
 
 /* PSU Brands */
-.psu-brand { width:120px; text-align:center; color:#ddd; transition:0.3s; cursor:pointer; }
-.psu-brand:hover { transform:scale(1.1); color:#fff; }
-.psu-brand .logo { width:80px; height:80px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-weight:700; margin:auto; font-size:32px; }
-.psu-brand .cart-icon { font-size:20px; margin-top:8px; color:#00bcd4; transition:0.3s; }
+.psu-brand {
+  width:120px;
+  text-align:center;
+  color:#ddd;
+  transition:0.3s;
+  cursor:pointer;
+}
+.psu-brand:hover {
+  transform:scale(1.1);
+  color:#fff;
+}
+.psu-brand .logo {
+  width:80px;
+  height:80px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  margin:auto;
+  font-size:32px;
+}
+.psu-brand .cart-icon {
+  font-size:20px;
+  margin-top:8px;
+  color:#00bcd4;
+  transition:0.3s;
+}
 .psu-brand .cart-icon:hover { color:#ffc107; }
 
 /* Gradient Cards */
-.home-card, .about-card, .calc-card { background: linear-gradient(135deg, #1f2233, #12141f); }
+.home-card, .about-card, .calc-card {
+  background: linear-gradient(135deg, #1f2233, #12141f);
+}
 
 /* Minimal icons */
-.icon { font-size:48px; margin-bottom:15px; color:#ffc107; }
+.icon {
+  font-size:48px;
+  margin-bottom:15px;
+  color:#ffc107;
+}
 
-/* Input Cards in Calculate */
-.calc-section { margin-bottom:20px; padding:20px; background:linear-gradient(135deg,#212436,#1a1c2c); border-radius:14px; transition:0.3s; }
+/* Input Cards */
+.calc-section {
+  margin-bottom:20px;
+  padding:20px;
+  background:linear-gradient(135deg,#212436,#1a1c2c);
+  border-radius:14px;
+  transition:0.3s;
+}
 .calc-section:hover { transform:scale(1.02); }
 
-footer { margin-top:50px; text-align:center; color:#888; }
+footer {
+  margin-top:50px;
+  text-align:center;
+  color:#888;
+}
 
 /* Language button */
-#langBtn { position:fixed; top:15px; right:15px; z-index:1000; }
+#langBtn {
+  position:fixed;
+  top:15px;
+  right:15px;
+  z-index:1000;
+}
 </style>
 </head>
 <body>
@@ -74,11 +148,18 @@ footer { margin-top:50px; text-align:center; color:#888; }
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="nav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" id="tabHome" onclick="showTab('home', this)">Home</a></li>
-        <li class="nav-item"><a class="nav-link" id="tabCalculate" onclick="showTab('calculate', this)">Calculate</a></li>
-        <li class="nav-item"><a class="nav-link" id="tabAbout" onclick="showTab('about', this)">About</a></li>
+        <li class="nav-item">
+          <a class="nav-link active" id="tabHome" onclick="showTab('home', this)">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="tabCalculate" onclick="showTab('calculate', this)">Calculate</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="tabAbout" onclick="showTab('about', this)">About</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -91,8 +172,14 @@ footer { margin-top:50px; text-align:center; color:#888; }
       <div class="card home-card shadow text-center p-5">
         <div class="icon"><i class="fas fa-microchip"></i></div>
         <h2 id="homeTitle">Welcome to PSU Tool</h2>
-        <p id="homeDesc">Calculate your system's PSU requirements accurately and explore recommended brands and efficiency tiers.</p>
-        <button class="btn btn-primary mt-3" onclick="showTab('calculate', document.getElementById('tabCalculate'))" id="goCalcBtn">Go to Calculator</button>
+        <p id="homeDesc">
+          Calculate your system's PSU requirements accurately and explore recommended brands and efficiency tiers.
+        </p>
+        <button class="btn btn-primary mt-3"
+          onclick="showTab('calculate', document.getElementById('tabCalculate'))"
+          id="goCalcBtn">
+          Go to Calculator
+        </button>
       </div>
     </div>
   </div>
@@ -103,6 +190,7 @@ footer { margin-top:50px; text-align:center; color:#888; }
   <div class="row justify-content-center">
     <div class="col-md-7">
       <div class="card calc-card shadow p-4">
+
         <h3 class="text-center mb-4" id="calcTitle">Power Supply Calculator</h3>
 
         <div class="calc-section text-center">
@@ -142,13 +230,16 @@ footer { margin-top:50px; text-align:center; color:#888; }
           </select>
         </div>
 
-        <button class="btn btn-warning w-100" onclick="calculate()" id="calcBtn">Calculate</button>
+        <button class="btn btn-warning w-100" onclick="calculate()" id="calcBtn">
+          Calculate
+        </button>
 
         <h4 id="result" class="text-center mt-4 text-warning"></h4>
 
         <!-- PSU Brands -->
         <div id="psuBrands" class="mt-4 d-none">
           <h5 class="text-center mb-3" id="brandsTitle">Recommended PSU Brands</h5>
+
           <div class="d-flex justify-content-center gap-4 flex-wrap">
 
             <div class="psu-brand corsair-box">
@@ -188,14 +279,20 @@ footer { margin-top:50px; text-align:center; color:#888; }
   <div class="card about-card shadow p-5 text-center">
     <div class="icon"><i class="fas fa-info-circle"></i></div>
     <h4 id="aboutTitle">About PSU Tool</h4>
-    <p id="aboutDesc1">This tool calculates PSU wattage requirements, recommends efficient tiers, and suggests reliable PSU brands for your system.</p>
-    <p id="aboutDesc2">Supports CPU, GPU, RAM, storage devices, and fan count to give accurate PSU recommendations.</p>
+    <p id="aboutDesc1">
+      This tool calculates PSU wattage requirements, recommends efficient tiers,
+      and suggests reliable PSU brands for your system.
+    </p>
+    <p id="aboutDesc2">
+      Supports CPU, GPU, RAM, storage devices, and fan count to give accurate PSU recommendations.
+    </p>
   </div>
 </div>
 
 <!-- FOOTER -->
-<footer class="mt-5 mb-3" id="footerText">All rights reserved by Padra</footer>
-
+<footer class="mt-5 mb-3" id="footerText">
+  All rights reserved by Padra
+</footer>
 <!-- JS -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
@@ -206,90 +303,92 @@ footer { margin-top:50px; text-align:center; color:#888; }
 function showTab(tabId, tabElement){
   document.querySelectorAll('.tab-section').forEach(el=>el.classList.remove('active'));
   document.getElementById(tabId).classList.add('active');
+
   document.querySelectorAll('.nav-link').forEach(el=>el.classList.remove('active'));
   if(tabElement) tabElement.classList.add('active');
 }
 
 // LANGUAGE
-let lang = 'fa'; // default
+let lang = 'fa';
+
 const texts = {
-  fa: {
-    home: "خانه",
-    calculate: "محاسبه",
-    about: "درباره",
-    title: "ابزار پاور",
-    welcome: "به ابزار محاسبه پاور خوش آمدید",
-    welcomeDesc: "با این ابزار می‌توانید میزان مصرف پاور سیستم خود را دقیق محاسبه کرده و برندهای پیشنهادی و رده‌های کارآمد را مشاهده کنید.",
-    goCalc: "رفتن به صفحه محاسبه",
-    calcTitle: "محاسبه‌کننده پاور",
-    cpu: "پردازنده (CPU)",
-    gpu: "کارت گرافیک (GPU)",
-    ram: "حافظه رم",
-    ssd: "تعداد SSD",
-    hdd: "تعداد HDD",
-    fans: "تعداد فن‌ها",
-    calcBtn: "محاسبه",
-    aboutTitle: "درباره ابزار پاور",
-    aboutDesc1: "این ابزار میزان مصرف پاور سیستم شما را محاسبه کرده و برندهای معتبر و رده‌های کارآمد را پیشنهاد می‌کند.",
-    aboutDesc2: "پشتیبانی از رم، سی پی یو، جی پی یو، مموی و فن",
-    footer: "تمامی حقوق برای پادرا محفوظ است",
-    result: "پاور پیشنهادی: {0} وات\nرده پیشنهادی: {1} وات"
+  fa:{
+    home:"خانه",
+    calculate:"محاسبه",
+    about:"درباره",
+    title:"ابزار پاور",
+    welcome:"به ابزار محاسبه پاور خوش آمدید",
+    welcomeDesc:"با این ابزار می‌توانید میزان مصرف پاور سیستم خود را دقیق محاسبه کرده و برندهای پیشنهادی و رده‌های کارآمد را مشاهده کنید.",
+    goCalc:"رفتن به صفحه محاسبه",
+    calcTitle:"محاسبه‌کننده پاور",
+    cpu:"پردازنده (CPU)",
+    gpu:"کارت گرافیک (GPU)",
+    ram:"حافظه رم",
+    ssd:"تعداد SSD",
+    hdd:"تعداد HDD",
+    fans:"تعداد فن‌ها",
+    calcBtn:"محاسبه",
+    aboutTitle:"درباره ابزار پاور",
+    aboutDesc1:"این ابزار میزان مصرف پاور سیستم شما را محاسبه کرده و برندهای معتبر را پیشنهاد می‌کند.",
+    aboutDesc2:"پشتیبانی از پردازنده، کارت گرافیک، رم، حافظه و فن",
+    footer:"تمامی حقوق برای پادرا محفوظ است",
+    result:"پاور پیشنهادی: {0} وات\nرده پیشنهادی: {1} وات"
   },
-  en: {
-    home: "Home",
-    calculate: "Calculate",
-    about: "About",
-    title: "PSU Tool",
-    welcome: "Welcome to PSU Tool",
-    welcomeDesc: "Calculate your system's PSU requirements accurately and explore recommended brands and efficiency tiers.",
-    goCalc: "Go to Calculator",
-    calcTitle: "Power Supply Calculator",
-    cpu: "CPU",
-    gpu: "GPU",
-    ram: "RAM Size",
-    ssd: "Number of SSDs",
-    hdd: "Number of HDDs",
-    fans: "Fans",
-    calcBtn: "Calculate",
-    aboutTitle: "About PSU Tool",
-    aboutDesc1: "This tool calculates PSU wattage requirements, recommends efficient tiers, and suggests reliable PSU brands for your system.",
-    aboutDesc2: "Supports CPU, GPU, RAM, storage devices, and fan count to give accurate PSU recommendations.",
-    footer: "All rights reserved by Padra",
-    result: "Recommended PSU: {0}W\nSuggested Tier: {1}W PSU"
+  en:{
+    home:"Home",
+    calculate:"Calculate",
+    about:"About",
+    title:"PSU Tool",
+    welcome:"Welcome to PSU Tool",
+    welcomeDesc:"Calculate your system's PSU requirements accurately and explore recommended brands.",
+    goCalc:"Go to Calculator",
+    calcTitle:"Power Supply Calculator",
+    cpu:"CPU",
+    gpu:"GPU",
+    ram:"RAM Size",
+    ssd:"Number of SSDs",
+    hdd:"Number of HDDs",
+    fans:"Fans",
+    calcBtn:"Calculate",
+    aboutTitle:"About PSU Tool",
+    aboutDesc1:"This tool calculates PSU wattage requirements and recommends brands.",
+    aboutDesc2:"Supports CPU, GPU, RAM, storage and fans",
+    footer:"All rights reserved by Padra",
+    result:"Recommended PSU: {0}W\nSuggested Tier: {1}W PSU"
   }
 };
 
 document.getElementById('langBtn').onclick = ()=>{
-  lang = lang==='fa'?'en':'fa';
+  lang = lang==='fa' ? 'en' : 'fa';
   updateTexts();
 };
 
 function updateTexts(){
-  document.getElementById('navTitle').innerText = texts[lang].title;
-  document.getElementById('tabHome').innerText = texts[lang].home;
-  document.getElementById('tabCalculate').innerText = texts[lang].calculate;
-  document.getElementById('tabAbout').innerText = texts[lang].about;
-  document.getElementById('homeTitle').innerText = texts[lang].welcome;
-  document.getElementById('homeDesc').innerText = texts[lang].welcomeDesc;
-  document.getElementById('goCalcBtn').innerText = texts[lang].goCalc;
-  document.getElementById('calcTitle').innerText = texts[lang].calcTitle;
-  document.getElementById('cpuLabel').innerText = texts[lang].cpu;
-  document.getElementById('gpuLabel').innerText = texts[lang].gpu;
-  document.getElementById('ramLabel').innerText = texts[lang].ram;
-  document.getElementById('ssdLabel').innerText = texts[lang].ssd;
-  document.getElementById('hddLabel').innerText = texts[lang].hdd;
-  document.getElementById('fansLabel').innerText = texts[lang].fans;
-  document.getElementById('calcBtn').innerText = texts[lang].calcBtn;
-  document.getElementById('aboutTitle').innerText = texts[lang].aboutTitle;
-  document.getElementById('aboutDesc1').innerText = texts[lang].aboutDesc1;
-  document.getElementById('aboutDesc2').innerText = texts[lang].aboutDesc2;
-  document.getElementById('footerText').innerText = texts[lang].footer;
-  document.getElementById('brandsTitle').innerText = lang==='fa'?'برندهای پیشنهادی':'Recommended PSU Brands';
-  document.getElementById('langBtn').innerText = lang==='fa'?'EN':'FA';
+  navTitle.innerText = texts[lang].title;
+  tabHome.innerText = texts[lang].home;
+  tabCalculate.innerText = texts[lang].calculate;
+  tabAbout.innerText = texts[lang].about;
+  homeTitle.innerText = texts[lang].welcome;
+  homeDesc.innerText = texts[lang].welcomeDesc;
+  goCalcBtn.innerText = texts[lang].goCalc;
+  calcTitle.innerText = texts[lang].calcTitle;
+  cpuLabel.innerText = texts[lang].cpu;
+  gpuLabel.innerText = texts[lang].gpu;
+  ramLabel.innerText = texts[lang].ram;
+  ssdLabel.innerText = texts[lang].ssd;
+  hddLabel.innerText = texts[lang].hdd;
+  fansLabel.innerText = texts[lang].fans;
+  calcBtn.innerText = texts[lang].calcBtn;
+  aboutTitle.innerText = texts[lang].aboutTitle;
+  aboutDesc1.innerText = texts[lang].aboutDesc1;
+  aboutDesc2.innerText = texts[lang].aboutDesc2;
+  footerText.innerText = texts[lang].footer;
+  brandsTitle.innerText = lang==='fa'?'برندهای پیشنهادی':'Recommended PSU Brands';
+  langBtn.innerText = lang==='fa'?'EN':'FA';
 }
 
 // DATA
-const CPUs = [
+const CPUs=[
   {value:65,name:"Intel i5-8400"},
   {value:95,name:"Intel i7-8700K"},
   {value:125,name:"Intel i7-12700K"},
@@ -300,7 +399,8 @@ const CPUs = [
   {value:105,name:"Ryzen 9 5900X"},
   {value:170,name:"Ryzen 9 7950X"}
 ];
-const GPUs = [
+
+const GPUs=[
   {value:75,name:"GTX 1050 Ti"},
   {value:120,name:"GTX 1660"},
   {value:220,name:"RTX 3060"},
@@ -311,7 +411,8 @@ const GPUs = [
   {value:300,name:"RX 6800 XT"},
   {value:355,name:"RX 7900 XTX"}
 ];
-const RAMs = [
+
+const RAMs=[
   {value:8,name:"8 GB"},
   {value:16,name:"16 GB"},
   {value:32,name:"32 GB"},
@@ -319,7 +420,6 @@ const RAMs = [
   {value:128,name:"128 GB"}
 ];
 
-// RENDER SELECTS
 function render(id,data){
   const el=document.getElementById(id);
   el.innerHTML="";
@@ -330,6 +430,7 @@ function render(id,data){
     el.appendChild(o);
   });
 }
+
 render("cpu",CPUs);
 render("gpu",GPUs);
 render("ram",RAMs);
@@ -337,49 +438,53 @@ $("#cpu,#gpu").select2({width:"100%"});
 
 // CALCULATE
 function calculate(){
-  const total = +cpu.value + +gpu.value + (+ram.value*2) + (+ssd.value*10) + (+hdd.value*15) + (+fans.value*5) +50;
-  const recommended = total;
-  const suggested = Math.ceil(recommended*1.2);
+  const total =
+    +cpu.value +
+    +gpu.value +
+    (+ram.value*2) +
+    (+ssd.value*10) +
+    (+hdd.value*15) +
+    (+fans.value*5) + 50;
 
-  const tiers = [300, 350, 400, 450, 500, 550, 600, 650, 750, 850, 1000];
-  let tier = tiers.find(t=>t >= suggested) || tiers[tiers.length-1];
+  const suggested = Math.ceil(total*1.2);
+  const tiers=[300,350,400,450,500,550,600,650,750,850,1000];
+  const tier = tiers.find(t=>t>=suggested) || 1000;
 
-  const resText = texts[lang].result.replace("{0}",recommended).replace("{1}",tier);
-  result.innerText = resText;
+  result.innerText = texts[lang].result
+    .replace("{0}",total)
+    .replace("{1}",tier);
 
   psuBrands.classList.remove("d-none");
-  corsairBox.style.display = tier >= 350 ? "block" : "none";
-  coolerBox.style.display  = tier >= 300 ? "block" : "none";
-  greenBox.style.display   = tier <= 500 ? "block" : "none";
-  seasonicBox.style.display= tier >= 450 ? "block" : "none";
 
-  document.getElementById("corsairModel").innerText = `Corsair RMx ${tier}W`;
-  document.getElementById("coolerModel").innerText  = `Cooler Master MWE ${tier}W`;
-  document.getElementById("seasonicModel").innerText= `Seasonic Focus ${tier}W`;
-  document.getElementById("greenModel").innerText   = `Green GP ${tier}W`;
+  corsairModel.innerText = `Corsair RMx ${tier}W`;
+  coolerModel.innerText = `Cooler Master MWE ${tier}W`;
+  seasonicModel.innerText = `Seasonic Focus ${tier}W`;
+  greenModel.innerText = `Green GP ${tier}W`;
 
-  // Cart icon click example
   document.querySelectorAll('.cart-icon').forEach(icon=>{
-    icon.onclick = ()=>{ window.open('#','_blank'); };
+    icon.onclick = ()=>{
+      window.open("https://www.tamirjet.com/","_blank");
+    };
   });
 }
 
 // ELEMENTS
-const cpu = document.getElementById("cpu");
-const gpu = document.getElementById("gpu");
-const ram = document.getElementById("ram");
-const ssd = document.getElementById("ssd");
-const hdd = document.getElementById("hdd");
-const fans = document.getElementById("fans");
-const result = document.getElementById("result");
-const psuBrands = document.getElementById("psuBrands");
-const corsairBox = document.querySelector(".corsair-box");
-const coolerBox  = document.querySelector(".cooler-box");
-const seasonicBox= document.querySelector(".seasonic-box");
-const greenBox   = document.querySelector(".green-box");
+const cpu=document.getElementById("cpu");
+const gpu=document.getElementById("gpu");
+const ram=document.getElementById("ram");
+const ssd=document.getElementById("ssd");
+const hdd=document.getElementById("hdd");
+const fans=document.getElementById("fans");
+const result=document.getElementById("result");
+const psuBrands=document.getElementById("psuBrands");
 
-// INIT
+const corsairModel=document.getElementById("corsairModel");
+const coolerModel=document.getElementById("coolerModel");
+const seasonicModel=document.getElementById("seasonicModel");
+const greenModel=document.getElementById("greenModel");
+
 updateTexts();
 </script>
+
 </body>
 </html>
